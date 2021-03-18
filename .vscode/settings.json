@@ -1,0 +1,12 @@
+{
+  "editor.snippetSuggestions": "top",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#9c9efd",
+    "titleBar.inactiveBackground": "#9c9efd"
+  },
+  "explorer.compactFolders": false
+
+}
