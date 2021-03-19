@@ -1,0 +1,20 @@
+.loginContainer{
+  background-color: skyblue;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.loginBtn{
+  max-width: 320px;
+  width: 12em;
+  padding: 0.5em;
+  border-radius: 1em;
+  border: 1px solid #000;
+  font-size: 1em;
+  font-weight: 600;
+  background-color: #fff;
+}
+
+.loginBtn:first-child{
+  margin-bottom: 0.5em;
+}

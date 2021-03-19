@@ -1,21 +1,41 @@
-import React from 'react';
-import Header from '../header/header';
+import React, { useEffect } from 'react';
 import Footer from '../footer/footer';
+import { useHistory } from 'react-router-dom';
+import AuthHeader from '../header/auth_header';
+import styles from './login.module.css';
 
 const Login = ({authService}) => {
+  const history = useHistory();
+  const goCreate = (userId) => {
+    history.push({
+      pathname: '/create',
+      state: {
+        id: userId
+      }
+    });
+  }
+
   const onLogin = (event) => {
     authService
       .socialLogin(event.currentTarget.textContent)
-      .then(console.log);
+      .then(data => goCreate(data.user.uid));
   }
+
+  useEffect(() => {
+    authService
+      .onAuthChange(user =>{
+        user && goCreate(user.uid);
+      })
+  });
+  
     return (
       <section>
-        <Header/>
-          <section>
+        <AuthHeader/>
+          <section className={styles.loginContainer}>
             <h1>Login</h1>
             <ul>
-              <li><button onClick={onLogin}>Google</button></li>
-              <li><button onClick={onLogin}>Github</button></li>
+              <li><button className={styles.loginBtn} onClick={onLogin}>Google</button></li>
+              <li><button className={styles.loginBtn} onClick={onLogin}>Github</button></li>
             </ul>
           </section>
         <Footer/>

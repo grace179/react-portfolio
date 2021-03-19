@@ -1,0 +1,10 @@
+.authHeader{
+  background-color: lightgrey;
+}
+
+.logoutBtn {
+  border: none;
+  font-size: 1em;
+  font-weight: 600;
+  background-color: transparent;
+}
