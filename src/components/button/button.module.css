@@ -1,0 +1,10 @@
+.button{
+  background-color: pink;
+  font-weight: bold;
+  padding: 0.5em;
+  font-size: 0.8rem;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
