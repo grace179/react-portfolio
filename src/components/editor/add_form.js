@@ -2,12 +2,15 @@ import React, { useRef, useState } from 'react';
 import styles from './add_form.module.css';
 import Button from '../button/button';
 
-const AddForm = ({ FileInput, addProject }) => {
+const AddForm = ({ FileInput, addProject,addFormOpen,handleCloseAddform }) => {
 
   const formRef = useRef();
   const creatorRef = useRef();
   const titleRef = useRef();
   const skillsRef = useRef();
+  const linkRef1 = useRef();
+  const linkRef2 = useRef();
+
   const descRef = useRef();
   const [file, setFile] = useState({fileName: null, fileUrl: null});
 
@@ -26,6 +29,8 @@ const AddForm = ({ FileInput, addProject }) => {
       creator: creatorRef.current.value || '',
       title: titleRef.current.value || '',
       skills: skillsRef.current.value || '',
+      link1: linkRef1.current.value || '',
+      link2: linkRef2.current.value || '',
       desc: descRef.current.value || '',
       fileName: file.fileName || '',
       fileUrl:file.fileUrl || '',
@@ -35,22 +40,40 @@ const AddForm = ({ FileInput, addProject }) => {
       fileName: null, fileUrl: null
     });
     addProject(project);
+    handleCloseAddform();
   };
   
     return (
-      <form ref={formRef} className={styles.form} action="">
-        <input 
-          ref={titleRef}
-          className={styles.input} 
-          type="text" name="title" 
-          placeholder="title"
-          />
-        <input ref={creatorRef} className={styles.input} type="text" name="creator" placeholder="creator"/>
-        <input ref={skillsRef} className={styles.input} type="text" name="skills" placeholder="skills"/>
-        <textarea ref={descRef} className={styles.desc} name="desc" placeholder="description"/>
-        <FileInput filename={file.fileName} onFileChange={onFileChange}/>
-        <Button name='Add' onClick={onSubmit}/>
-      </form>
+      
+      <div className={ addFormOpen ? `${styles.openModal} ${styles.modal}`: `${styles.modal}`}>
+      {addFormOpen ? (
+        <form ref={formRef} className={styles.form} action="">
+          <header>Add MyProject
+            <button 
+              onclick={handleCloseAddform}
+              className={styles.closeBtn}>X</button>
+          </header>
+          
+          <input 
+            ref={titleRef}
+            className={styles.input} 
+            type="text" name="title" 
+            placeholder="title"
+            />
+          <input ref={creatorRef} className={styles.input} type="text" name="creator" placeholder="creator"/>
+          <input ref={skillsRef} className={styles.input} type="text" name="skills" placeholder="skills"/>
+          <input ref={linkRef1} className={styles.input} type="url" name="link1" placeholder="link1"/>
+          <input ref={linkRef2} className={styles.input} type="url" name="link2" placeholder="link2"/>
+          <textarea ref={descRef} className={styles.desc} name="desc" placeholder="description"/>
+          <FileInput filename={file.fileName} onFileChange={onFileChange}/>
+          <Button name='Add' onClick={onSubmit}/>
+        </form>
+      ):null
+    
+    }
+      
+      </div>
+
     );
 }
 

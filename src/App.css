@@ -2,3 +2,14 @@
   font-family: 'Cafe24Danjunghae';
   src: url('./font/Cafe24Danjunghae.ttf');
 }
+@font-face {
+  font-family: 'S-CoreDream-4Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.container{
+  margin-top: 85px;
+  font-family: 'S-CoreDream-4Regular';
+  
+}

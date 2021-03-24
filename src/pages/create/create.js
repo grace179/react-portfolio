@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import AuthHeader from '../../components/header/auth_header';
 import Editor from '../../components/editor/editor';
 import Preview from '../../components/preview/preview';
+import Loading from '../../components/loading/loading';
 
 const Create = ({ FileInput, authService, projectRepository }) => {
 
@@ -12,10 +13,22 @@ const Create = ({ FileInput, authService, projectRepository }) => {
   
   const [projects, setProjects] = useState({});
   const [userId, setUserID] = useState(historyState && historyState.id);
-  
+  const [lodaing, setLoading] = useState(true);
+
   const onLogout = () => {
     authService.logout();
   };
+
+  useEffect(() => {
+    if(!userId){
+      return;
+    }
+    const stopSync = projectRepository.syncProjects(userId, projects => {
+      setProjects(projects);
+      setLoading(false);
+    });
+    return () => stopSync();
+  }, [userId,projectRepository]);
 
   useEffect(()=>{
     authService.onAuthChange(user => {
@@ -26,6 +39,7 @@ const Create = ({ FileInput, authService, projectRepository }) => {
       }
     })
   });
+
 
   const createOrUdateProject = (project) => {
     setProjects(projects => {
@@ -48,15 +62,21 @@ const Create = ({ FileInput, authService, projectRepository }) => {
     return (
       <section className={styles.create}>
         <AuthHeader onLogout={onLogout}/>
-          <h1>Create Page</h1>
-          
-          <Editor
-            FileInput={FileInput}
-            projects={projects} 
-            addProject={createOrUdateProject}
-            updateProject={createOrUdateProject}
-            deleteProject={deleteProject}/>
-          <Preview projects={projects}/>
+          <h1 className={styles.desc}>프로젝트를 추가하고 수정할 수 있습니다.</h1>
+          <div className={styles.container}>
+            <Editor
+              FileInput={FileInput}
+              projects={projects} 
+              addProject={createOrUdateProject}
+              updateProject={createOrUdateProject}
+              deleteProject={deleteProject}/>
+              {
+                lodaing ?
+                <Loading/>:
+                <Preview projects={projects}/>
+
+              }
+          </div>
       </section>
     );
 }

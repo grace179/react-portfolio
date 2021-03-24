@@ -1,0 +1,28 @@
+.loadingContainer{
+  margin: 0 auto;
+}
+
+.loading{
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  border: 1.5em solid lightgray;
+  border-top: 1.5em solid pink;
+  animation: spin 2s linear infinite;
+  margin-bottom: 1.5em;  
+}
+
+.loadingContainer p{
+  font-size: 1em;
+  font-weight: 600;
+
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}

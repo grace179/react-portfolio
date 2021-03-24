@@ -8,6 +8,7 @@ import MainHeader from './components/header/mainheader';
 import ImageUploader from './service/image_uploader';
 import ImageFileInput from './components/image_file_input/image_file_input';
 import ProjectRepository from './service/project_repository';
+import Footer from './components/footer/footer';
 
 const imageUploader = new ImageUploader();
 const FileInput = props => (
@@ -21,21 +22,32 @@ function App() {
   return (
     <div>
       <MainHeader/>
-        <Switch>
-          <Route exact path="/">
-            <Home authService={authService}/>
-          </Route>
-          <Route path="/create">
-            <Create 
-            FileInput={FileInput}
-            authService={authService}
-            projectRepository={projectRepository}
-            />
-          </Route>
-          <Route path="/list">
-            <List/>
-          </Route>
+        <section className="container">
+          <Switch>
+            <Route exact path="/">
+              <Home authService={authService}/>
+            </Route>
+            <Route path="/create">
+              <Create 
+              FileInput={FileInput}
+              authService={authService}
+              projectRepository={projectRepository}
+              />
+            </Route>
+            <Route path="/list">
+              <List
+                projectRepository={projectRepository}
+              />
+            </Route>
+            <Route path="/user-project">
+              <List
+                projectRepository={projectRepository}
+              />
+            </Route>
         </Switch>
+        </section>
+        <Footer/>
+
     </div>
     );
 }

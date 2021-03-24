@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
-import Footer from '../footer/footer';
 import { useHistory } from 'react-router-dom';
-import AuthHeader from '../header/auth_header';
 import styles from './login.module.css';
 
-const Login = ({authService}) => {
+const Login = ({authService, loginOpen, handleCloseLogin}) => {
   const history = useHistory();
   const goCreate = (userId) => {
     history.push({
@@ -30,15 +28,23 @@ const Login = ({authService}) => {
   
     return (
       <section>
-        <AuthHeader/>
-          <section className={styles.loginContainer}>
-            <h1>Login</h1>
-            <ul>
-              <li><button className={styles.loginBtn} onClick={onLogin}>Google</button></li>
-              <li><button className={styles.loginBtn} onClick={onLogin}>Github</button></li>
-            </ul>
-          </section>
-        <Footer/>
+          <div className={loginOpen ? `${styles.openModal} ${styles.modal}`: `${styles.modal}`}>
+            {
+              loginOpen ? (
+                <section>
+                  <header>Login
+                  <button onClick={handleCloseLogin}>X</button>
+                  </header>
+                  <main>
+                  <ul>
+                    <li><button className={styles.loginBtn} onClick={onLogin}>Google</button></li>
+                    <li><button className={styles.loginBtn} onClick={onLogin}>Github</button></li>
+                  </ul>
+                  </main>
+                </section>
+              ):null
+            }
+          </div>
       </section>
     );
 }

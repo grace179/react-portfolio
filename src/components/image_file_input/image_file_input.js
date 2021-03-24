@@ -5,10 +5,10 @@ const ImageFileInput = ({ imageUploader, filename, onFileChange }) => {
   const [loading, setLoading]= useState(false);
   const inputRef = useRef(); 
 
-    const onButtonClick = (event) => {
-      event.preventDefault();
-      inputRef.current.click();
-    }
+    // const onButtonClick = (event) => {
+    //   event.preventDefault();
+    //   inputRef.current.click();
+    // }
 
     const onChange = async (event) => {
       setLoading(true);
@@ -29,12 +29,15 @@ const ImageFileInput = ({ imageUploader, filename, onFileChange }) => {
           ref={inputRef}
           className={styles.input} type="file" accept="image/*" name="file"
           onChange={onChange}/>
-        <button className={styles.button} onClick={onButtonClick}>
+        {/* <button className={styles.button} onClick={onButtonClick}>
           {filename || 'No file'}
-        </button>
+        </button> */}
       {
         loading &&
-        <div className={styles.loading}></div>
+        <>
+          <span className={styles.loading}></span>
+          <span className={styles.loadingText}>image loading</span>
+        </>
       }
       </div>
     );

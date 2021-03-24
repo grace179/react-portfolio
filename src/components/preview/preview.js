@@ -5,7 +5,6 @@ import Project from '../project/project';
 const Preview = ({projects}) => {
     return (
       <section className={styles.preview}>
-        <h1>Preview</h1>
         <h2>My Projects</h2>
         <ul>
           {
