@@ -15,7 +15,6 @@ const Project = ({project}) => {
           <p className={styles.skills}>{skills}</p>
           <a className={styles.link} rel="noreferrer" target="_blank" href={link1}>GitHub</a>
           <a className={styles.link} rel="noreferrer" target="_blank" href={link2}>Demo Link</a>
-
           <p className={styles.desc}>{desc}</p>
         </div>
       </li>

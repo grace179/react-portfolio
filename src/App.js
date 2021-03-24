@@ -8,7 +8,6 @@ import MainHeader from './components/header/mainheader';
 import ImageUploader from './service/image_uploader';
 import ImageFileInput from './components/image_file_input/image_file_input';
 import ProjectRepository from './service/project_repository';
-import Footer from './components/footer/footer';
 
 const imageUploader = new ImageUploader();
 const FileInput = props => (
@@ -46,8 +45,6 @@ function App() {
             </Route>
         </Switch>
         </section>
-        <Footer/>
-
     </div>
     );
 }

@@ -37,8 +37,8 @@ const EditorForm = ({ FileInput, project, updateProject, deleteProject }) => {
     return (
       <div className={styles.formContainer}>
         <form className={styles.form} action="">
-          <input ref={creatorRef} className={styles.input} type="text" onChange={onChange} name="creator" value={creator}/>
           <input ref={titleRef} className={styles.input} type="text" onChange={onChange} name="title" value={title}/>
+          <input ref={creatorRef} className={styles.input} type="text" onChange={onChange} name="creator" value={creator}/>
           <input ref={skillsRef} className={styles.input} type="text" onChange={onChange} name="skills" value={skills}/>
           <input ref={linkRef1} className={styles.input} type="url" onChange={onChange} name="link1" value={link1}/>
           <input ref={linkRef2} className={styles.input} type="url" onChange={onChange} name="link2" value={link2}/>

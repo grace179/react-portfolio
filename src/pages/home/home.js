@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Login from '../../components/login/login';
 import styles from './home.module.css';
+import Footer from '../../components/footer/footer';
+import Welcome from '../../components/welcome/welcome';
 
 const Home = ({authService}) => {
 
@@ -14,6 +16,7 @@ const Home = ({authService}) => {
 
     return (
     <section>
+      <Welcome/>
       <button 
         className={styles.loginBtn}
         onClick={handleOpenLogin}>Go Login</button>      
@@ -21,6 +24,8 @@ const Home = ({authService}) => {
           authService={authService}
           loginOpen={loginOpen}
           handleCloseLogin={handleCloseLogin}/>
+    
+      <Footer/>
     </section>
     );
 }

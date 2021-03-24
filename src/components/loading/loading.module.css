@@ -8,7 +8,7 @@
   border-radius: 50%;
   border: 1.5em solid lightgray;
   border-top: 1.5em solid pink;
-  animation: spin 2s linear infinite;
+  animation: spin 1.5s linear infinite;
   margin-bottom: 1.5em;  
 }
 

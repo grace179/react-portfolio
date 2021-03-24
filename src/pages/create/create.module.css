@@ -10,7 +10,9 @@
 }
 .create .desc{
   text-align: center;
-
+  margin: 1em auto 1.5em auto;
+  border-bottom: 4px solid skyblue;
+  width: 350px;
 }
 .container {
   display: flex;
