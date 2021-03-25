@@ -1,0 +1,67 @@
+@value mediaQuery,makerWhite from '../../common/size.css';
+
+.slider{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg,#aef8f8,#74b9ff);
+  padding: 2em;
+}
+
+.slideContain{
+  width: 100vh;
+  height: 80vh;
+  touch-action: none;
+  position: relative;
+}
+
+.buttonContain {
+  text-align: center;
+  width: 100%;
+}
+
+.buttonContain button {
+  padding: 6px 0;
+  margin: 0 3px;
+  color: #000;
+  transition: all .3s ease-out;
+  font-size: 1em;
+  font-weight: 600;
+  border: none;
+  background-color: transparent;
+}
+
+.buttonContain button:hover {
+  color: #eee;
+}
+
+.buttonContain .liBtn {
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.buttonContain .liBtn li {
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  text-align: center;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+
+.buttonContain .liBtn  .currentli,
+.buttonContain .liBtn li:hover {
+  background-color: black;
+}
+
+
+@media screen and (max-width: mediaQuery) {
+  .buttonContain{
+    z-index: 60;
+  }
+}

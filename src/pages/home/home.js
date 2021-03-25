@@ -3,8 +3,9 @@ import Login from '../../components/login/login';
 import styles from './home.module.css';
 import Footer from '../../components/footer/footer';
 import Welcome from '../../components/welcome/welcome';
+import Slider from '../../components/slider/slider';
 
-const Home = ({authService}) => {
+const Home = ({authService, projectRepository}) => {
 
   const [loginOpen, setLoginOpen]= useState(false);
   const handleOpenLogin = () => {
@@ -17,14 +18,18 @@ const Home = ({authService}) => {
     return (
     <section>
       <Welcome/>
+        
+      <Slider
+        projectRepository={projectRepository}
+        />
+
       <button 
         className={styles.loginBtn}
         onClick={handleOpenLogin}>Go Login</button>      
-        <Login
+      <Login
           authService={authService}
           loginOpen={loginOpen}
           handleCloseLogin={handleCloseLogin}/>
-    
       <Footer/>
     </section>
     );

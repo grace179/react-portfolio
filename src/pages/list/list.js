@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styles from './list.module.css';
 import Project from '../../components/project/project';
 import Loading from '../../components/loading/loading';
 
@@ -17,7 +18,7 @@ const List = ({projectRepository}) => {
   
     return (
       loading ? <Loading/>:(
-      <div>
+      <div className={styles.list}>
       { Object.keys(adminProject).map(key => {
           return (<Project project={adminProject[key]} key={key}/>)
       })}

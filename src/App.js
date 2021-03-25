@@ -24,7 +24,10 @@ function App() {
         <section className="container">
           <Switch>
             <Route exact path="/">
-              <Home authService={authService}/>
+              <Home 
+                authService={authService}
+                projectRepository={projectRepository}
+              />
             </Route>
             <Route path="/create">
               <Create 

@@ -1,7 +1,8 @@
 .mainheader {
   font-family: 'Cafe24Danjunghae';
   width: 100%;
-  background-color: lightblue;
+  /* background-color: #bad7f5; */
+  background-color: #fff;
   padding: 1.5em 1em;
   position: fixed;
   top: 0;

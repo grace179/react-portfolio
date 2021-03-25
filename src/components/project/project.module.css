@@ -1,3 +1,5 @@
+@value mediaQuery,makerWhite from '../../common/size.css';
+
 .project {
   background-color: rgb(243, 242, 242);
   width: 100%;
@@ -43,4 +45,16 @@
 .desc{
   white-space: pre;
   font-size: 0.9em;
+}
+
+
+@media screen and (max-width: mediaQuery) {
+  .project {
+    flex-direction: column;
+  }
+
+  .image{
+    margin-right: 0;
+    margin-bottom: 1em;
+  }
 }

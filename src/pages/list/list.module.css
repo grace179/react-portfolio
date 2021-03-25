@@ -1,0 +1,11 @@
+@value mediaQuery,makerWhite from '../../common/size.css';
+
+.list{
+  padding: 3em 10em;
+}
+
+@media screen and (max-width: mediaQuery) {
+  .list {
+    padding: 3em 0;
+  }
+}

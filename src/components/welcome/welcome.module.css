@@ -1,20 +1,29 @@
+@value mediaQuery,makerWhite from '../../common/size.css';
+
 .welcome{
+  height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex: 1;
   box-sizing: border-box;
+  padding-bottom: 2em;
 }
 .image{
   flex-basis: 50%;
   padding: 1em;
   width: 400px;
-  height: 400px;
+  /* height: 400px; */
   animation: left-side 2s ease-in-out;
 
 }
 .welcomeText{
   flex-basis: 50%;
+  font-family: 'NanumSquareRound';
   font-size: 2em;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
   animation: right-side 2s ease-in-out;
 }
 
@@ -38,5 +47,12 @@
   to {
       opacity: 1;
       transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: mediaQuery) {
+  .welcome {
+    flex-direction: column;
+    margin-bottom: 1em;
   }
 }
