@@ -9,13 +9,15 @@
   border: 1.5em solid lightgray;
   border-top: 1.5em solid pink;
   animation: spin 1.5s linear infinite;
-  margin-bottom: 1.5em;  
+  /* margin-bottom: 1.5em;   */
+  margin: 1.5em auto;
+
 }
 
 .loadingContainer p{
   font-size: 1em;
   font-weight: 600;
-
+  text-align: center;
 }
 
 @keyframes spin {

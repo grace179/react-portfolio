@@ -62,8 +62,8 @@ const AddForm = ({ FileInput, addProject,addFormOpen,handleCloseAddform }) => {
             />
           <input ref={creatorRef} className={styles.input} type="text" name="creator" placeholder="creator"/>
           <input ref={skillsRef} className={styles.input} type="text" name="skills" placeholder="skills"/>
-          <input ref={linkRef1} className={styles.input} type="url" name="link1" placeholder="link1"/>
-          <input ref={linkRef2} className={styles.input} type="url" name="link2" placeholder="link2"/>
+          <input ref={linkRef1} className={styles.input} type="url" name="link1" placeholder="link1(github)"/>
+          <input ref={linkRef2} className={styles.input} type="url" name="link2" placeholder="link2(demo link)"/>
           <textarea ref={descRef} className={styles.desc} name="desc" placeholder="description"/>
           <FileInput filename={file.fileName} onFileChange={onFileChange}/>
           <Button name='Add' onClick={onSubmit}/>

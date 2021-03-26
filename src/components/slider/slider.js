@@ -72,10 +72,10 @@ const Slider = ({projectRepository}) => {
         </div>
         )
       }
-        <div className={styles.buttonContain}>
-        <button
+        <div
+          className={styles.prevBtn}
           onClick={handleClickPrev}
-          >PREV</button>
+          ></div>
         <ul className={styles.liBtn}>
         { Object.keys(adminProject).map((key,index)=>
             <li
@@ -84,10 +84,10 @@ const Slider = ({projectRepository}) => {
             ></li>
         )}
         </ul>
-        <button
+        <div
+          className={styles.nextBtn}
           onClick={handleClickNext}
-          >NEXT</button>
-      </div>
+          ></div>
       </section>
     );
 }

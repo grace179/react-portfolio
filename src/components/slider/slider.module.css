@@ -1,48 +1,54 @@
 @value mediaQuery,makerWhite from '../../common/size.css';
 
 .slider{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(120deg,#aef8f8,#74b9ff);
-  padding: 2em;
-}
-
-.slideContain{
-  width: 100vh;
-  height: 80vh;
-  touch-action: none;
-  position: relative;
-}
-
-.buttonContain {
-  text-align: center;
   width: 100%;
-}
-
-.buttonContain button {
-  padding: 6px 0;
-  margin: 0 3px;
-  color: #000;
-  transition: all .3s ease-out;
-  font-size: 1em;
-  font-weight: 600;
-  border: none;
-  background-color: transparent;
-}
-
-.buttonContain button:hover {
-  color: #eee;
-}
-
-.buttonContain .liBtn {
+  height: 90vh;
   position: relative;
-  display: inline-block;
-  padding: 0 10px;
+  background: linear-gradient(120deg,#aef8f8,#74b9ff);
 }
 
-.buttonContain .liBtn li {
+.prevBtn{
+  position: absolute;
+  top: 50%;
+  left: 1em;
+  transform: translateY(-50%);
+
+  width: 0;
+  height: 0;
+  border-top: 1em solid transparent;
+  border-bottom: 1em solid transparent;
+  border-right: 2em solid #eee;
+
+  z-index: 60;
+  cursor: pointer;
+
+}
+
+.nextBtn{
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  transform: translateY(-50%);
+  
+  width: 0;
+  height: 0;
+  border-top: 1em solid transparent;
+  border-left: 2em solid #eee;
+  border-bottom: 1em solid transparent;
+  
+  cursor: pointer;
+  z-index: 60;
+
+}
+
+.liBtn {
+  position: absolute;
+  bottom: 2em;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+.liBtn li {
   position: relative;
   display: inline-block;
   width: 10px;
@@ -54,14 +60,29 @@
   border-radius: 50%;
 }
 
-.buttonContain .liBtn  .currentli,
-.buttonContain .liBtn li:hover {
+  .liBtn  .currentli,
+  .liBtn li:hover {
   background-color: black;
 }
 
-
 @media screen and (max-width: mediaQuery) {
-  .buttonContain{
-    z-index: 60;
+  
+  .slider{
   }
+  .slider:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  .prevBtn{
+    left:0;
+  }
+  .nextBtn{
+    right:0;
+  }
+}
+.slideContain{
+  max-width: 1200px;
+
 }
