@@ -1,4 +1,6 @@
 .mainheader {
+  display: flex;
+  justify-content: space-between;
   font-family: 'Cafe24Danjunghae';
   width: 100%;
   /* background-color: #bad7f5; */

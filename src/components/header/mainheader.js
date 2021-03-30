@@ -16,6 +16,7 @@ const MainHeader = () => {
     const scrollBar = document.getElementById('scroll-bar');
     scrollBar.style.width = percent + '%';
   }
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
   });
@@ -26,9 +27,15 @@ const MainHeader = () => {
         <NavLink to="/">
           Portfoilo
         </NavLink>
-        <NavLink to="/list">
-          Project
-        </NavLink>
+        <div className={styles.navRight}>
+          <NavLink to="/list">
+            Project
+          </NavLink>
+          <a rel="noreferrer" target="_blank" href="https://github.com/grace179">
+            GitHub
+          </a>
+        </div>
+
       </header>
     );
 }

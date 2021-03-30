@@ -40,7 +40,7 @@ const AddForm = ({ FileInput, addProject,addFormOpen,handleCloseAddform }) => {
       fileName: null, fileUrl: null
     });
     addProject(project);
-    handleCloseAddform();
+    handleCloseAddform(event);
   };
   
     return (

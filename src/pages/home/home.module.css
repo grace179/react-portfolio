@@ -1,0 +1,12 @@
+.home{
+  background-color: #fff;
+
+}
+.loginBtn{
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  text-align: right;
+  color: #ddd;
+}

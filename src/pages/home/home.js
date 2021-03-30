@@ -17,7 +17,7 @@ const Home = ({authService, projectRepository}) => {
   }
 
     return (
-    <section>
+    <section className={styles.home}>
       <Welcome/>
       <Skill/>
       <Slider
@@ -26,7 +26,7 @@ const Home = ({authService, projectRepository}) => {
 
       <button 
         className={styles.loginBtn}
-        onClick={handleOpenLogin}>Go Login</button>      
+        onClick={handleOpenLogin}>Login</button>      
       <Login
           authService={authService}
           loginOpen={loginOpen}

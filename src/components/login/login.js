@@ -27,24 +27,22 @@ const Login = ({authService, loginOpen, handleCloseLogin}) => {
   });
   
     return (
-      <section>
-          <div className={loginOpen ? `${styles.openModal} ${styles.modal}`: `${styles.modal}`}>
-            {
-              loginOpen ? (
-                <section>
-                  <header>Login
-                  <button onClick={handleCloseLogin}>X</button>
-                  </header>
-                  <main>
-                  <ul>
-                    <li><button className={styles.loginBtn} onClick={onLogin}>Google</button></li>
-                    <li><button className={styles.loginBtn} onClick={onLogin}>Github</button></li>
-                  </ul>
-                  </main>
-                </section>
-              ):null
-            }
-          </div>
+      <section className={loginOpen ? `${styles.openModal} ${styles.modal}`: `${styles.modal}`}>
+        {
+          loginOpen ? (
+            <section>
+              <header>Login
+              <button onClick={handleCloseLogin}>X</button>
+              </header>
+              <main>
+              <ul>
+                <li><button className={styles.loginBtn} onClick={onLogin}>Google</button></li>
+                <li><button className={styles.loginBtn} onClick={onLogin}>Github</button></li>
+              </ul>
+              </main>
+            </section>
+          ):null
+        }
       </section>
     );
 }

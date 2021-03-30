@@ -10,6 +10,7 @@ const Welcome = (props) => {
         Portfolio<br/>
         with React, Firebase
         </article>
+        <i className="fas fa-chevron-down"></i>
       </section>
     );
 }
