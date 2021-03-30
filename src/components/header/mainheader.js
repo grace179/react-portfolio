@@ -9,9 +9,9 @@ const MainHeader = () => {
     const clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
     const contentHeight = scrollHeight - clientHeight;
     const percent = (scrollTopPoint / contentHeight) * 100;
-    console.log(scrollTopPoint);
-    console.log(scrollHeight);
-    console.log(clientHeight)
+    // console.log('scrollTopPoint '+scrollTopPoint);
+    // console.log('scrollHeight '+scrollHeight);
+    // console.log('clientHeight '+clientHeight)
 
     const scrollBar = document.getElementById('scroll-bar');
     scrollBar.style.width = percent + '%';

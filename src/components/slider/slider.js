@@ -81,6 +81,7 @@ const Slider = ({projectRepository}) => {
             <li
             className={pageNum === index ? `${styles.currentli}`:null}
             onClick={()=>setPageNum(index)}
+            key={key}
             ></li>
         )}
         </ul>

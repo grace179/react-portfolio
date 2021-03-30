@@ -5,6 +5,7 @@
   height: 90vh;
   position: relative;
   background: linear-gradient(120deg,#aef8f8,#74b9ff);
+  z-index: 10;
 }
 
 .prevBtn{
@@ -40,7 +41,13 @@
   z-index: 60;
 
 }
+.prevBtn:hover{
+  border-right-color: #fff;
+}
 
+.nextBtn:hover{
+  border-left-color: #fff;
+}
 .liBtn {
   position: absolute;
   bottom: 2em;
@@ -67,8 +74,6 @@
 
 @media screen and (max-width: mediaQuery) {
   
-  .slider{
-  }
   .slider:after {
     content: "";
     display: block;
@@ -84,5 +89,4 @@
 }
 .slideContain{
   max-width: 1200px;
-
 }

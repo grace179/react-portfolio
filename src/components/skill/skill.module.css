@@ -1,0 +1,142 @@
+@value mediaQuery from '../../common/size.css';
+
+.skill{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  margin-top: 100vh;
+  padding: 0 1em;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 1, 0.2);
+  transition: all 0.001s ease-in;
+}
+
+.skill h1 {
+  font-size: 2em;
+  padding-top: 1em;
+}
+
+.skills{
+  position: sticky;
+  top: 90px;
+}
+
+.skillList {
+  margin-bottom: 0.5em;
+  position: absolute;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.skillItem {
+  margin-bottom: 1em;
+}
+
+.cover {
+  position:absolute; 
+  left:0; 
+  top:0; 
+  z-index:10; 
+  height:100%; 
+  background-color: rgb(197, 236, 252); 
+  /* background-color: rgba(247, 217, 217, 0.2); */
+  animation:cover_effect 4s 1 cubic-bezier(0.24, 0.77, 0.32, 0.95) both paused;
+}
+.cover.active {
+  animation-play-state: running;
+}
+.skillTitle{
+  text-align: center;
+}
+
+.skillText{
+  text-align: center;
+  font-weight: 600;
+  font-size: 1em;
+  position:relative; z-index:20; display: block; 
+  animation:text_opacity 2s 1s 1 cubic-bezier(0.24, 0.77, 0.32, 0.95) both paused;
+}
+
+.skillText.active {
+  animation-play-state: running;
+}
+
+.skillItem i{
+  font-size: 6em;
+  margin-bottom: 0.1em;
+}
+.skillItem .html i{
+  color: #e2703a;
+}
+
+.skillItem .css i{
+  color: #439ae0;
+}
+
+.skillItem .sass i{
+  color: #f73c77;
+}
+
+.skillItem .js i{
+  color: #ffc93c;
+}
+
+.skillItem .react i{
+  color: #51c2d5;
+}
+
+.skillItem .nodejs i{
+  color: green;
+}
+
+@keyframes cover_effect {
+  0%{
+      width: 100%;
+      height: 100%;
+      transform:translateY(0);
+      opacity: 1;
+  }
+  100%{
+      width: 100%;
+      height: 0%;
+      transform:translateY(150vh);
+      opacity: 0;
+      display: none;
+  }
+}
+
+@keyframes text_opacity {
+  0%{
+      opacity: 0;
+      color:#3535ff;
+      transform:translateX(-50%);
+  }
+  100%{
+      opacity: 1;
+      color:#000;
+      transform:translateX(0%);
+  }
+}
+
+@media screen and (max-width: mediaQuery) {
+  .skillList {
+    
+    justify-content: center;
+    padding-bottom: 10em;
+  }
+  .skillItem{
+    margin-left: 1em;
+  }
+  .skillItem:first-child{
+    margin-left: 0;
+  }
+  
+}

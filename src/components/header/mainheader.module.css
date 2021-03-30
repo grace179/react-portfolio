@@ -14,10 +14,10 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 4px;
-  background-color: #3c40c6;
+  height: 8px;
+  background: linear-gradient(120deg,#aef8f8,#74b9ff);
   z-index: 110;
-  transition: all .3s ease-in-out;
+  transition: all .3s cubic-bezier(0.24, 0.77, 0.32, 0.95);
 }
 
 a{

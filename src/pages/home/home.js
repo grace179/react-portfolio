@@ -4,6 +4,7 @@ import styles from './home.module.css';
 import Footer from '../../components/footer/footer';
 import Welcome from '../../components/welcome/welcome';
 import Slider from '../../components/slider/slider';
+import Skill from '../../components/skill/skill';
 
 const Home = ({authService, projectRepository}) => {
 
@@ -18,7 +19,7 @@ const Home = ({authService, projectRepository}) => {
     return (
     <section>
       <Welcome/>
-        
+      <Skill/>
       <Slider
         projectRepository={projectRepository}
         />

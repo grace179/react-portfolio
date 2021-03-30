@@ -7,7 +7,8 @@
   height: 10em;
   border-radius: 50%;
   border: 1.5em solid lightgray;
-  border-top: 1.5em solid pink;
+  border-top: 1.5em solid skyblue;
+
   animation: spin 1.5s linear infinite;
   /* margin-bottom: 1.5em;   */
   margin: 1.5em auto;

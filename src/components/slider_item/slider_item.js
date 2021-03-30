@@ -6,7 +6,7 @@ const SliderItem = ({project, pageNum, index}) => {
     
     const {title, desc, skills, link1, link2, fileUrl} = project;
     const url = fileUrl || sampleImg;
-    console.log(pageNum, index);
+    // console.log(pageNum, index);
     return (
     
       <li className={pageNum === index ? `${styles.slideItem} ${styles.active}`:`${styles.slideItem}`}>
